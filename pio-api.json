@@ -1,0 +1,629 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Pio Draft API",
+    "version": "1.0",
+    "description": "Apache PredictionIO new API Draft",
+    "contact": {
+      "email": "dev@predictionio.apache.org",
+      "name": "Apache PredictionIO",
+      "url": "http://predictionio.apache.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://github.com/apache/predictionio/blob/master/LICENSE.txt"
+    }
+  },
+  "host": "example.com",
+  "paths": {
+    "/help": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Static PIO Options",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "examples": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "Available Apache PredictionIO Options",
+        "summary": "pio help",
+        "tags": [
+          "General APIs"
+        ],
+        "operationId": "pio help"
+      }
+    },
+    "/version": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio version",
+        "description": "Current Apache PredictionIO Version",
+        "tags": [
+          "General APIs"
+        ],
+        "operationId": "pio version"
+      }
+    },
+    "/status": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio status",
+        "description": "General Status of PIO Services",
+        "tags": [
+          "General APIs"
+        ],
+        "operationId": "pio status"
+      }
+    },
+    "/upgrade": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio upgrade",
+        "tags": [
+          "General APIs"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {},
+            "description": "Upgrade to a Specific Version"
+          }
+        ],
+        "description": "Upgrade Service from its Current Version to an Assigned Version",
+        "operationId": "pio upgrade"
+      }
+    },
+    "/app/list": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio app list",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "description": "List all Registered Apps",
+        "operationId": "pio app list"
+      }
+    },
+    "/app/new/{name}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            },
+            "examples": {
+              "application/json": {}
+            }
+          }
+        },
+        "summary": "pio app new",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {},
+            "description": "New App Metadata"
+          }
+        ],
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app new",
+        "description": "Register new App"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/app/show/{name}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio app show",
+        "description": "Display Information of an App",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app show"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/app/delete/{name}": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio app delete",
+        "description": "Delete Specific App",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app delete"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/app/data-delete/{name}": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "description": "Delete Data of a Specific App",
+        "summary": "pio app data-delete",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app data-delete"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/accesskey/list": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio accesskey list",
+        "description": "Apps to AccessKeys Mapping Table",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio accesskey list"
+      }
+    },
+    "/accesskey/new/{name}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio accesskey new",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {}
+          }
+        ],
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio accesskey new",
+        "description": "Assign new AccessKey for an App"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/accesskey/delete/{name}": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio accesskey delete",
+        "description": "Delete an Accesskey",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio accesskey delete"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/channel/list": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio app channel-list",
+        "description": "Apps to Channels Mapping Table",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app channel-list"
+      }
+    },
+    "/channel/new/{name}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio app channel-new",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {}
+          }
+        ],
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app channel-new",
+        "description": "Create new Channel for an App"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/channel/delete/{name}": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio app channel-delete",
+        "description": "Delete a Channel",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pio app channel-delete"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/batchpredict": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio batchpredict",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pio batchpredict",
+        "description": "Use an Engine for Batch Prediction"
+      }
+    },
+    "/build": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio build",
+        "description": "Build an Engine",
+        "operationId": "pio build",
+        "tags": [
+          "Engine Management Service"
+        ]
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio dashboard",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pio dashboard",
+        "description": "Behavior Dashboard of a Prediction Service"
+      }
+    },
+    "/deploy": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio deploy",
+        "operationId": "pio deploy",
+        "description": "Deploy a Prediction Instance",
+        "tags": [
+          "Engine Management Service"
+        ]
+      }
+    },
+    "/eval": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio eval",
+        "operationId": "pio eval",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "description": "Evaluate a Model with Given Engine Parameters"
+      }
+    },
+    "/export/{name}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio export",
+        "operationId": "pio export",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "description": "Export all Events of an App to a File"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/import/{name}": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio import",
+        "operationId": "pio import",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "description": "Import Events of an App from a File"
+      },
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "type": "string",
+          "required": true
+        }
+      ]
+    },
+    "/run": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio run",
+        "operationId": "pio run",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "description": "Run Spark Submit with Request Parameters"
+      }
+    },
+    "/train": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio train",
+        "operationId": "pio train",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "description": "Train an Engine"
+      }
+    },
+    "/predict": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio predict",
+        "operationId": "pio predict",
+        "tags": [
+          "Prediction Service"
+        ],
+        "description": "Provide Prediction for Requests"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Engine Management Service"
+    },
+    {
+      "name": "Event Collection Service"
+    },
+    {
+      "name": "Prediction Service"
+    },
+    {
+      "name": "General APIs"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ]
+}
