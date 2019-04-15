@@ -1,0 +1,142 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pio Draft API3",
+    "version": "v1",
+    "description": "Apache PredictionIO new API Draft",
+    "contact": {
+      "email": "dev@predictionio.apache.org",
+      "name": "Apache PredictionIO",
+      "url": "http://predictionio.apache.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://github.com/apache/predictionio/blob/master/LICENSE.txt"
+    }
+  },
+  "servers": [
+    {
+      "url": "/pio/v1/event",
+      "description": "Event Collection Service"
+    },
+    {
+      "url": "/pio/v1/manage",
+      "description": "Engine Management Service"
+    },
+    {
+      "url": "/pio/v1/predict",
+      "description": "Prediction Service"
+    }
+  ],
+  "paths": {
+    "/pio/v1/event/listapp": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all registered apps",
+        "summary": "List all registered apps",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventListApp",
+        "servers": [
+          {
+            "url": "/pio/v1/event"
+          }
+        ]
+      }
+    },
+    "/pio/v1/event/newapp": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "New app metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Register a new app",
+        "summary": "Register a new app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventNewApp"
+      }
+    },
+    "/pio/v1/event/showapp": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "App id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Show the detail of an app",
+        "summary": "Show the detail of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventShowApp"
+      }
+    },
+    "/pio/v1/event/deleteapp": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "App id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Delete an app",
+        "summary": "Delete an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteApp"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Event Collection Service"
+    },
+    {
+      "name": "Engine Management Service"
+    },
+    {
+      "name": "Prediction Service"
+    }
+  ]
+}
