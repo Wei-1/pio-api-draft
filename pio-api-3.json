@@ -103,7 +103,7 @@
       }
     },
     "/pio/v1/event/deleteapp": {
-      "post": {
+      "delete": {
         "responses": {
           "200": {
             "description": "OK",
@@ -125,6 +125,435 @@
           "Event Collection Service"
         ],
         "operationId": "pioEventDeleteApp"
+      }
+    },
+    "/pio/v1/event/deleteappdata": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "App id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Delete the data of an app",
+        "summary": "Delete the data of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteAppData"
+      }
+    },
+    "/pio/v1/event/listaccesskey": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List apps to accesskeys mapping",
+        "summary": "List apps to accesskeys mapping",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventListAccesskey"
+      }
+    },
+    "/pio/v1/event/newaccesskey": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "App id and accesskey id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Assign a new accesskey to an app",
+        "summary": "Assign a new accesskey to an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventNewAccesskey"
+      }
+    },
+    "/pio/v1/event/deleteaccesskey": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "App id and accesskey id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Delete an accesskey of an app",
+        "summary": "Delete an accesskey of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteAccesskey"
+      }
+    },
+    "/pio/v1/event/listchannel": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all channels",
+        "summary": "List all channels",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDListChannel"
+      }
+    },
+    "/pio/v1/event/newchannel": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "New channel metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Register a new channel",
+        "summary": "Register a new channel",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventNewChannel"
+      }
+    },
+    "/pio/v1/event/deletechannel": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Channel id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Delete a channel",
+        "summary": "Delete a channel",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteChannel"
+      }
+    },
+    "/pio/v1/event/exportapp": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "App id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Export all events of an app",
+        "summary": "Export all events of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventExportApp"
+      }
+    },
+    "/pio/v1/event/importapp": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "File metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Import events of an app from a file",
+        "summary": "Import events of an app from a file",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventImportApp"
+      }
+    },
+    "/pio/v1/manage/runspark": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Spark submit metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Run spark submit with given parameters",
+        "summary": "Run spark submit with given parameters",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageRunSpark"
+      }
+    },
+    "/pio/v1/manage/buildengine": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Engine metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Build an engine",
+        "summary": "Build an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageBuildEngine"
+      }
+    },
+    "/pio/v1/manage/trainmodel": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Training metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Train a model based on an engine",
+        "summary": "Train a model based on an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageTrainModel"
+      }
+    },
+    "/pio/v1/manage/evalmodel": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Validating metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Validate a model with some data",
+        "summary": "Validate a model with some data",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageEvalModel"
+      }
+    },
+    "/pio/v1/manage/deploymodel": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Model metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Deploy a model as a prediction service",
+        "summary": "Deploy a model as a prediction service",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageDeployModel"
+      }
+    },
+    "/pio/v1/manage/terminatemodel": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Model metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Terminate a prediction service",
+        "summary": "Terminate a prediction service",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageTerminateModel"
+      }
+    },
+    "/pio/v1/predict/api": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Data to predict",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Predict an API request",
+        "summary": "Predict an API request",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictAPI"
+      }
+    },
+    "/pio/v1/predict/batch": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Files metadata to predict",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Predict batch files",
+        "summary": "Predict batch files",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictBatch"
+      }
+    },
+    "/pio/v1/predict/dashboard": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "Get dashboard of the prediction",
+        "summary": "Get dashboard of the prediction",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictDashboard"
       }
     }
   },

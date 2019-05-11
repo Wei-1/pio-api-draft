@@ -401,101 +401,6 @@
         }
       ]
     },
-    "/batchpredict": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        },
-        "summary": "pio batchpredict",
-        "tags": [
-          "Prediction Service"
-        ],
-        "operationId": "pio batchpredict",
-        "description": "Use an Engine for Batch Prediction"
-      }
-    },
-    "/build": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        },
-        "summary": "pio build",
-        "description": "Build an Engine",
-        "operationId": "pio build",
-        "tags": [
-          "Engine Management Service"
-        ]
-      }
-    },
-    "/dashboard": {
-      "get": {
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        },
-        "summary": "pio dashboard",
-        "tags": [
-          "Prediction Service"
-        ],
-        "operationId": "pio dashboard",
-        "description": "Behavior Dashboard of a Prediction Service"
-      }
-    },
-    "/deploy": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        },
-        "summary": "pio deploy",
-        "operationId": "pio deploy",
-        "description": "Deploy a Prediction Instance",
-        "tags": [
-          "Engine Management Service"
-        ]
-      }
-    },
-    "/eval": {
-      "post": {
-        "responses": {
-          "200": {
-            "description": "",
-            "schema": {
-              "type": "object",
-              "properties": {}
-            }
-          }
-        },
-        "summary": "pio eval",
-        "operationId": "pio eval",
-        "tags": [
-          "Engine Management Service"
-        ],
-        "description": "Evaluate a Model with Given Engine Parameters"
-      }
-    },
     "/export/{name}": {
       "post": {
         "responses": {
@@ -569,6 +474,25 @@
         "description": "Run Spark Submit with Request Parameters"
       }
     },
+    "/build": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio build",
+        "description": "Build an Engine",
+        "operationId": "pio build",
+        "tags": [
+          "Engine Management Service"
+        ]
+      }
+    },
     "/train": {
       "post": {
         "responses": {
@@ -586,6 +510,44 @@
           "Engine Management Service"
         ],
         "description": "Train an Engine"
+      }
+    },
+    "/eval": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio eval",
+        "operationId": "pio eval",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "description": "Evaluate a Model with Given Engine Parameters"
+      }
+    },
+    "/deploy": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio deploy",
+        "operationId": "pio deploy",
+        "description": "Deploy a Prediction Instance",
+        "tags": [
+          "Engine Management Service"
+        ]
       }
     },
     "/predict": {
@@ -606,14 +568,52 @@
         ],
         "description": "Provide Prediction for Requests"
       }
+    },
+    "/batchpredict": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio batchpredict",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pio batchpredict",
+        "description": "Use an Engine for Batch Prediction"
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "summary": "pio dashboard",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pio dashboard",
+        "description": "Behavior Dashboard of a Prediction Service"
+      }
     }
   },
   "tags": [
     {
-      "name": "Engine Management Service"
+      "name": "Event Collection Service"
     },
     {
-      "name": "Event Collection Service"
+      "name": "Engine Management Service"
     },
     {
       "name": "Prediction Service"
