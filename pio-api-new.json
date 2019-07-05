@@ -1,0 +1,1225 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Pio APIs",
+    "version": "v1",
+    "description": "Apache PredictionIO 1.0 API Draft",
+    "contact": {
+      "email": "dev@predictionio.apache.org",
+      "name": "Apache PredictionIO",
+      "url": "http://predictionio.apache.org"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://github.com/apache/predictionio/blob/master/LICENSE.txt"
+    }
+  },
+  "servers": [
+    {
+      "url": "event.pio-apis.example",
+      "description": "Event Collection Service"
+    },
+    {
+      "url": "manage.pio-apis.example",
+      "description": "Engine Management Service"
+    },
+    {
+      "url": "predict.pio-apis.example",
+      "description": "Prediction Service"
+    }
+  ],
+  "paths": {
+    "/app": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all apps",
+        "summary": "List all apps",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventListApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "New app metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Create a new app",
+        "summary": "Create a new app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventNewApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/app/{AppID}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Show an app",
+        "summary": "Show an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventShowApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "New app metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Update an app",
+        "summary": "Update an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventUpdateApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Delete an app",
+        "summary": "Delete an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/accesskey": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all accesskeys",
+        "summary": "List all accesskeys",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventListAccesskey",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/app/{AppID}/accesskey": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "List all accesskeys of an app",
+        "summary": "List all accesskeys of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventListAppAccesskey",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "App id and accesskey id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Create a new accesskey to an app",
+        "summary": "Create a new accesskey to an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventNewAccesskey",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/app/{AppID}/accesskey/{AccesskeyID}": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          },
+          {
+            "name": "AccesskeyID",
+            "in": "path",
+            "description": "Accesskey ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Delete an accesskey of an app",
+        "summary": "Delete an accesskey of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteAccesskey",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/channel": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all channels",
+        "summary": "List all channels",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventListChannels",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "New channel metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Create a new channel",
+        "summary": "Create a new channel",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventNewChannel",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/channel/{ChannelID}": {
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ChannelID",
+            "in": "path",
+            "description": "ID of the Channel",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Update channel metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Update a channel",
+        "summary": "Update a channel",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventUpdateChannel",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ChannelID",
+            "in": "path",
+            "description": "ID of the Channel",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Delete a channel",
+        "summary": "Delete a channel",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteChannel",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/app/{AppID}/export": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of an App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "App id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Export all events of an app",
+        "summary": "Export all events of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventExportApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/app/{AppID}/import": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of an App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "File metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Import events of an app from a file",
+        "summary": "Import events of an app from a file",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventImportApp",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/app/{AppID}/data": {
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "AppID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "App id",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Delete the data of an app",
+        "summary": "Delete the data of an app",
+        "tags": [
+          "Event Collection Service"
+        ],
+        "operationId": "pioEventDeleteAppData",
+        "servers": [
+          {
+            "url": "event.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/spark": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Spark submit metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Run spark submit with given parameters",
+        "summary": "Run spark submit with given parameters",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageRunSpark",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/engine": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all engines",
+        "summary": "List all engines",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageListEngine",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Engine metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Create an engine",
+        "summary": "Create an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageBuildEngine",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/engine/{EngineID}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "EngineID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Show an engine",
+        "summary": "Show an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageShowEngine",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "EngineID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Delete an engine",
+        "summary": "Delete an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageDeleteEngine",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/engine/{EngineID}/model": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "EngineID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "List all models of an engine",
+        "summary": "List all models of an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageListModel",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "EngineID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Training metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Create a model of an engine",
+        "summary": "Create a model of an engine",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageCreateModel",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/model/{ModelID}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ModelID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Show a model",
+        "summary": "Show a model",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageShowModel",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ModelID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Delete a model",
+        "summary": "Delete a model",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageDeleteModel",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/model/{ModelID}/evaluate": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ModelID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Validating metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Evaluate a model with validation data",
+        "summary": "Evaluate a model with validation data",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageEvalModel",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/model/{ModelID}/server": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ModelID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "List all prediction servers of a model",
+        "summary": "List all prediction servers of a model",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageListModelService",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ModelID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Model metadata",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Create a prediction server of a model",
+        "summary": "Create a prediction server of a model",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageDeployModel",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/server": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "List all servers",
+        "summary": "List all servers",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageListServer",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/server/{ServerID}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ServerID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Show a prediction server",
+        "summary": "Show a prediction server",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageShowServer",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ServerID",
+            "in": "path",
+            "description": "ID of the App",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        ],
+        "description": "Delete a server",
+        "summary": "Delete a server",
+        "tags": [
+          "Engine Management Service"
+        ],
+        "operationId": "pioManageDeleteServer",
+        "servers": [
+          {
+            "url": "manage.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/predict": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "Show the prediction server",
+        "summary": "Show the prediction server",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictShow",
+        "servers": [
+          {
+            "url": "predict.pio-apis.example"
+          }
+        ]
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "Delete the prediction server",
+        "summary": "Delete the prediction server",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictDelete",
+        "servers": [
+          {
+            "url": "predict.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/predict/dashboard": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "description": "Show dashboard of a prediction server",
+        "summary": "Show dashboard of a prediction server",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictDashboard",
+        "servers": [
+          {
+            "url": "predict.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/predict/request": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Data to predict",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Predict an API request",
+        "summary": "Predict an API request",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictRequest",
+        "servers": [
+          {
+            "url": "predict.pio-apis.example"
+          }
+        ]
+      }
+    },
+    "/predict/batch": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {}
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "description": "Files metadata to predict",
+          "content": {
+            "application/json": {}
+          }
+        },
+        "description": "Predict batch files",
+        "summary": "Predict batch files",
+        "tags": [
+          "Prediction Service"
+        ],
+        "operationId": "pioPredictBatch",
+        "servers": [
+          {
+            "url": "predict.pio-apis.example"
+          }
+        ]
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Event Collection Service"
+    },
+    {
+      "name": "Engine Management Service"
+    },
+    {
+      "name": "Prediction Service"
+    }
+  ]
+}
